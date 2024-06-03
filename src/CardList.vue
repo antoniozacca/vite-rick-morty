@@ -11,9 +11,9 @@ export default {
 </script>
 
 <template>
-    <div>
-        <ul>
-            <li v-for="card in store.results">
+    <div class="container mt-5">
+        <ul class="row">
+            <li class="col-3" v-for="card in store.results">
                 <img :src="card.image">
                 <h2>{{ card.name }}</h2>
                 <p>{{ card.status }}</p>
@@ -22,3 +22,9 @@ export default {
         </ul>
     </div>
 </template>
+<style scoped>
+    img{
+        width: 100%;
+    }
+    
+</style>

@@ -10,5 +10,5 @@ export default {
 }
 </script>
 <template>
-    <div>{{ store.info.pages }} risultati trovati</div>
+    <div>{{ store.results.length }} risultati trovati</div>
 </template>
