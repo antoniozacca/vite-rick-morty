@@ -10,5 +10,5 @@ export default {
 }
 </script>
 <template>
-    <div>N risultati trovati</div>
+    <div>{{ store.info.pages }} risultati trovati</div>
 </template>

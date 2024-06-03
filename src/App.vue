@@ -1,19 +1,21 @@
 <script>
 import CardFound from './CardFound.vue';
 import CardList from './CardList.vue';
+import HeaderList from './HeaderList.vue';
 import { store } from './store.js'
 
-
+import axios from 'axios';
 export default {
   components: {
     CardFound,
     CardList,
+    HeaderList
   },
   data(){
     return {
       store,
       cards: []
-    },
+    }
   },
   methods:{
     cardsGen() {
@@ -22,7 +24,7 @@ export default {
                         this.cards.push(response.data)
                     })
       }
-    }
+    },
   created(){
     axios.get(this.store.apiUrl).then((response) => {
       this.store.results = response.data.results
@@ -33,8 +35,9 @@ export default {
 </script>
 
 <template>
-  <CardFound></CardFound>
+  <HeaderList></HeaderList>
   <CardList></CardList>
+  <CardFound></CardFound>
 </template>
 
 <style scoped>
