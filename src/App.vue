@@ -12,8 +12,17 @@ export default {
   data(){
     return {
       store,
-    }
+      cards: []
+    },
   },
+  methods:{
+    cardsGen() {
+      axios.get("https://rickandmortyapi.com/api/character")
+                    .then(response => {
+                        this.cards.push(response.data)
+                    })
+      }
+    }
   created(){
     axios.get(this.store.apiUrl).then((response) => {
       this.store.results = response.data.results
